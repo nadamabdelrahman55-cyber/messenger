@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/messenger/widgets/messenger_action_widget.dart';
-import 'package:flutter_application_1/theme/app_colors.dart';
+import 'package:flutter_application_1/screens/messenger/widgets/chat_vertical_widget.dart';
+import 'package:flutter_application_1/screens/messenger/widgets/messenger_app_bar.dart';
+import 'package:flutter_application_1/screens/messenger/widgets/search_feild.dart';
 
 class MessengerScreen extends StatelessWidget {
   const MessengerScreen({super.key});
@@ -8,24 +9,18 @@ class MessengerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: CircleAvatar(
-          backgroundImage: Image.asset("assets/images/profile.jpg").image,
+      appBar: MessengerAppBar(),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            SearchFeild(),
+            ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => ChatVerticalWidget(),
+            ),
+          ],
         ),
-        title: Text(
-          "chats",
-
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          MessengerActionWidget(icon: Icons.camera_alt_rounded),
-          MessengerActionWidget(svgIcon: "assets/images/edit_icon.svg"),
-        ],
       ),
     );
   }

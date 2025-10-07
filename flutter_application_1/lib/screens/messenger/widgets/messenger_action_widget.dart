@@ -14,7 +14,7 @@ class MessengerActionWidget extends StatelessWidget {
       radius: 25,
       child: icon != null
           ? Icon(icon, size: 30, color: Colors.black)
-          : SvgPicture.asset(svgIcon ?? ""),
+          : SvgPicture.asset(svgIcon ?? "", width: 25, height: 25),
     );
   }
 }
