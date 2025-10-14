@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ChatVerticalWidget extends StatelessWidget {
-  const ChatVerticalWidget({super.key});
+  final String name;
+  const ChatVerticalWidget({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class ChatVerticalWidget extends StatelessWidget {
           ],
         ),
         SizedBox(height: 10),
-        Text("nada", style: TextStyle(fontSize: 20)),
+        Text(name, style: TextStyle(fontSize: 20)),
       ],
     );
   }

@@ -11,7 +11,7 @@ class MessengerActionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
       backgroundColor: AppColors.lightGray,
-      radius: 25,
+      radius: 20,
       child: icon != null
           ? Icon(icon, size: 30, color: Colors.black)
           : SvgPicture.asset(svgIcon ?? "", width: 25, height: 25),
