@@ -9,6 +9,8 @@ class MessengerAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: AppBar(
+        backgroundColor: Colors.transparent,
+        scrolledUnderElevation: 0,
         leading: CircleAvatar(
           backgroundImage: Image.asset("assets/images/nona.jpg").image,
         ),
